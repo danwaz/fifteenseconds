@@ -1,5 +1,4 @@
 $(function(){
-
 	var searchQuery, url, nextPage, retryCount = 0,
 		appID = 'b93756e565794360942f1eba0831c90c';
 
@@ -111,5 +110,9 @@ $(function(){
 			doSearch(url);
 		}
 	});
+
+	if(window.navigator.userAgent.indexOf('Firefox') > -1){
+		errorStatus('Sorry, your browser does not support mp4 video :(');
+	}
 
 });
