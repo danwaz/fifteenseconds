@@ -111,7 +111,7 @@ $(function(){
 		}
 	});
 
-	if(window.navigator.userAgent.indexOf('Firefox') > -1){
+	if(Modernizr.video.h264 === ''){
 		errorStatus('Sorry, your browser does not support mp4 video :(');
 	}
 
