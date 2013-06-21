@@ -66,7 +66,7 @@ $(function(){
 			}
 
 			//remove whitespace
-			searchQuery = encodeURIComponent(searchQuery.replace(/\s+/g, ' '));
+			searchQuery = searchQuery.replace(/\s+/g, '');
 
 			url = 'https://api.instagram.com/v1/tags/' + searchQuery + '/media/recent?client_id=' + appID + '&count=30';
 			$('.video-container').empty();
