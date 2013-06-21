@@ -25,12 +25,12 @@ html{
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 700;
 	background: #f6f6f6;
-	min-width: 50em;
 }
 
 #main{
 	padding: 20px 0 50px;
 	@include container();
+	min-width: 96em;
 }
 
 .video-container{
@@ -40,6 +40,7 @@ html{
 
 header{
 	@include container();
+	min-width: 96em;
 	.inner{
 		padding: 0;
 		border-bottom: 6px solid #181818;

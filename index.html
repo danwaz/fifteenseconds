@@ -8,10 +8,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>FifteenSeconds | Instagram Video Search</title>
 		<meta name="description" content="Search for Instagram videos by hashtag. Enjoy the wonder of 15 second moving pictures of food and pets w/ filters!">
-		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-		
+
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/main.css">
 		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
@@ -22,14 +22,14 @@
 		<![endif]-->
 
 		<!-- Add your site or application content here -->
-		
+
 		<header>
 			<div class="inner">
 				<h1>FifteenSeconds</h1>
 				<h2>Instagram Video Search</h2>
 			</div>
 		</header>
-		
+
 		<div id="main">
 			<div class="search group">
 				<form id="photo-search" class="group">
@@ -54,12 +54,14 @@
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-15221723-11', 'fifteenseconds.us');
+		ga('send', 'pageview');
+
 		</script>
 	</body>
 </html>
