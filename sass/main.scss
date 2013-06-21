@@ -64,6 +64,26 @@ header{
 	}
 }
 
+footer{
+	padding-top: 150px;
+	@include container();
+	min-width: 96em;
+	p{
+		font-weight: 300;
+		letter-spacing: 1px;
+		font-size: 1.4em;
+		color: #ccc;
+		a{
+			color: #ccc;
+			text-decoration: none;
+			@include transition(color .3s ease);
+			&:hover{
+				color: #181818;
+			}
+		}
+	}
+}
+
 .search{
 	position: relative;
 	input[type="text"]{
