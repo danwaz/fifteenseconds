@@ -32,7 +32,7 @@ html{
 #main{
 	padding: 20px 0 50px;
 	@include container();
-	@include susy-grid-background;
+	//@include susy-grid-background;
 }
 
 .video-container{
@@ -257,6 +257,9 @@ footer{
 			@include transition(opacity 0.3s ease);
 			cursor: pointer;
 			background-size: 20%;
+			@include at-breakpoint(10 50em){
+				@include opacity(0.5);
+			}
 			&:hover{
 				@include opacity(0.7);
 			}
@@ -267,6 +270,9 @@ footer{
 				@include opacity(0);
 				&:hover{
 					@include opacity(0.5);
+				}
+				@include at-breakpoint(10 50em){
+					background: none;
 				}
 			}
 		}
