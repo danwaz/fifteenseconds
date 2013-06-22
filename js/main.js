@@ -52,9 +52,11 @@ $(function(){
 			caption = videoArr[i].caption ? videoArr[i].caption.text : '',
 			likes = videoArr[i].likes.count;
 
-			$('.video-container').append('<div class="item"><div class="media-wrapper" data-video="'+videoUrl+'"><img src="'+thumbnail+'"><div class="controls"></div></div><div class="meta"><div class="user group"><img src="'+userphoto+'"><span class="name">'+username+'</span></div><div class="caption"><p>'+caption+'</p></div><div class="likes"><p><span class="icon-heart-fill"></span>'+likes+'</p></div></div></div>');
+			$('.video-container').append('<div class="item"><div class="media-wrapper" data-video="'+videoUrl+'"><img src="'+thumbnail+'"><div class="controls"></div></div><div class="meta"><div class="user group"><img src="'+userphoto+'"><span class="name">'+username+'</span></div><div class="caption"><p>'+caption+'</p></div><div class="likes"><p><span class="icon-heart-fill"></span>'+likes+'</p></div></div><div class="divider"></div></div>');
 		}
 		$('#main').addClass('active');
+
+		$('.item').removeClass('last').eq(-1).addClass('last');
 	}
 
 	$('#photo-search').on({

@@ -3,6 +3,7 @@
 @import 'susy';
 @import 'normalize';
 
+$base-font-size: 10px;
 $total-columns  : 10;             // a 12-column grid
 $column-width   : 7em;            // each column is 4em wide
 $gutter-width   : 2em;            // 1em gutters between columns
@@ -25,34 +26,59 @@ html{
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-weight: 700;
 	background: #f6f6f6;
+	min-width: 30em;
 }
 
 #main{
 	padding: 20px 0 50px;
 	@include container();
-	min-width: 96em;
+	@include susy-grid-background;
 }
 
 .video-container{
 	margin: 0 auto;
-
 }
 
 header{
 	@include container();
-	min-width: 96em;
 	.inner{
 		padding: 0;
 		border-bottom: 6px solid #181818;
+		@include at-breakpoint(62em 10 80em){
+			font-size: 80%;
+		}
+		@include at-breakpoint(50em 10 62em){
+			font-size: 60%;
+		}
+		@include at-breakpoint(39em 10 50em){
+			font-size: 50%;
+		}
+		@include at-breakpoint(10 39em){
+			font-size: 35%;
+		}
+		
 	}
 	h1{
-		font-size: 130px;
+		font-size: 13em;
 		text-shadow: 1px 1px 1px #fff;
 		letter-spacing: -1px;
 		margin: 0;
 		padding: 10px 0 0px;
 		position: relative;
 		left: -8px;
+		@include at-breakpoint(62em 10 80em){
+			left: -6px;
+		}
+		@include at-breakpoint(50em 10 62em){
+			left: -5px;
+		}
+		@include at-breakpoint(39em 10 50em){
+			left: -4px;
+		}
+		@include at-breakpoint(10 39em){
+			padding: 5px 0 0px;
+			left: -3px;
+		}
 	}
 	h2{
 		margin: 0;
@@ -61,13 +87,20 @@ header{
 		left: -1px;
 		margin-bottom: 20px;
 		font-size: 2.5em;
+		@include at-breakpoint(39em 10 50em){
+			margin-bottom: 5px;
+		}
+		@include at-breakpoint(10 39em){
+			top: -8px;
+			margin-bottom: 5px;
+			font-size: 3em;
+		}
 	}
 }
 
 footer{
 	padding-top: 150px;
 	@include container();
-	min-width: 96em;
 	p{
 		font-weight: 300;
 		letter-spacing: 1px;
@@ -86,38 +119,55 @@ footer{
 
 .search{
 	position: relative;
+	@include at-breakpoint(62em 10 80em){
+		font-size: 80%;
+	}
+	@include at-breakpoint(50em 10 62em){
+		font-size: 60%;
+	}
+	@include at-breakpoint(39em 10 50em){
+		font-size: 50%;
+	}
+	@include at-breakpoint(10 39em){
+		font-size: 35%;
+	}
 	input[type="text"]{
-		height: 100px;
-		width: 90%;
-		font-size: 78px;
+		@include span-columns(9);
+		@include omega;
+		font-size: 7.8em;
 		background: none;
 		outline: 0;
 		color: #181818;
 		font-family: 'Open Sans Condensed', sans-serif;
 		font-weight: 700;
 		border: none;
-		margin-left: 65px;
+		padding: 0;
 	}
 	input[type="submit"]{
 		visibility: hidden;
 		position: absolute;
 		left: -9999px;
 	}
-	label{
-		float: left;
-		height: 40px;
-		line-height: 40px;
-		margin-right: 20px;
-		font-size: 20px;
-	}
 }
 
 .icon-magnifying-glass{
-	font-size: 50px;
-	position: absolute;
-	top: 34px;
+	font-size: 6.0em;
 	color: #a9a9a9;
+	@include span-columns(1);
 	@include transition(color .3s ease);
+	margin-top: 23px;
+	@include at-breakpoint(62em 10 80em){
+		margin-top: 19px;
+	}
+	@include at-breakpoint(50em 10 62em){
+		margin-top: 14px;
+	}
+	@include at-breakpoint(39em 10 50em){
+		margin-top: 12px;
+	}
+	@include at-breakpoint(10 39em){
+		margin-top: 8px;
+	}
 }
 
 .icon-magnifying-glass, .icon-heart-fill {
@@ -152,9 +202,36 @@ footer{
 .item{
 	padding: 20px 0;
 	@extend .group;
+	@include at-breakpoint(10 50em){
+		padding-bottom: 15px;
+	}
+
+	&.last{
+		.divider{
+			display: none;
+		}
+	}
+	
+	.divider{
+		display: none;
+		height: 1px;
+		width: 33%;
+		margin-left: 33%;
+		background-color: #ccc; 
+		float: left;
+		margin-top: 20px;
+		@include at-breakpoint(10 50em){
+			display: block;
+		}
+	}
+
 	.media-wrapper{
 		@include span-columns(7);
 		position: relative;
+		line-height: 0;
+		@include at-breakpoint(10 50em){
+			@include span-columns(10);
+		}
 		img{
 			width: 100%;
 			position: relative;
@@ -197,18 +274,29 @@ footer{
 	.meta{
 		@include span-columns(3);
 		@include omega;
+		@include at-breakpoint(10 50em){
+			@include span-columns(10);
+			padding-top: 10px;
+		}
 		.user{
 			img{
 				width: 7em;
 				float: left;
 				margin-right: 10px;
 				@include border-radius(70px);
+				@include at-breakpoint(10 50em){
+					width: 5em;
+				}
 			}
 			.name{
 				float: left;
 				font-size: 1.8em;
 				padding-top: 20px;
 				word-break: break-word;
+				@include at-breakpoint(10 50em){
+					font-size: 1.6em;
+					padding-top: 15px;
+				}
 			}
 		}
 		.caption{
@@ -216,10 +304,22 @@ footer{
 			p{
 				font-size: 1.5em;
 			}
+			@include at-breakpoint(10 50em){
+				padding-top: 0;
+				p{
+					font-size: 1.3em;
+				}
+			}
 		}
 		.likes{
 			p{
 				font-size: 1.5em;
+			}
+			@include at-breakpoint(10 50em){
+				p{
+					font-size: 1.3em;
+					margin-bottom: 0;
+				}
 			}
 		}
 	}
@@ -248,7 +348,7 @@ footer{
 
 	span{
 		color: white;
-		font-size: 26px;
+		font-size: 2.6em;
 		font-weight: bold;
 	}
 }
@@ -256,6 +356,9 @@ footer{
 .active{
 	.load-more{
 		display: block;
+	}
+	.error{
+		display: none;
 	}
 }
 
