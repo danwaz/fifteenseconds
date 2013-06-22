@@ -75,6 +75,7 @@ $(function(){
 			$('.error').empty();
 			$('#main').removeClass('active');
 			doSearch(url);
+			$('#search').blur();
 			return false;
 		}
 	});
