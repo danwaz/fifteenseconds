@@ -22,7 +22,6 @@ $(function(){
 
 		for(var i = 0; i < data.data.length; i++ ){
 			if(data.data[i].type === 'video'){
-				console.log('video!');
 				videoArr.push(data.data[i]);
 			}
 		}
