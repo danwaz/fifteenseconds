@@ -56,7 +56,7 @@ header{
 		@include at-breakpoint(10 39em){
 			font-size: 35%;
 		}
-		
+
 	}
 	h1{
 		font-size: 13em;
@@ -104,8 +104,9 @@ footer{
 	p{
 		font-weight: 300;
 		letter-spacing: 1px;
-		font-size: 1.4em;
+		font-size: 1.6em;
 		color: #ccc;
+		margin-bottom: 5px;
 		a{
 			color: #ccc;
 			text-decoration: none;
@@ -114,6 +115,10 @@ footer{
 				color: #181818;
 			}
 		}
+	}
+	.legal{
+		margin-top: 0;
+		font-size: 1.2em;
 	}
 }
 
@@ -211,13 +216,13 @@ footer{
 			display: none;
 		}
 	}
-	
+
 	.divider{
 		display: none;
 		height: 1px;
 		width: 33%;
 		margin-left: 33%;
-		background-color: #ccc; 
+		background-color: #ccc;
 		float: left;
 		margin-top: 20px;
 		@include at-breakpoint(10 50em){
