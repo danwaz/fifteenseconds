@@ -318,6 +318,7 @@ footer{
 			@include at-breakpoint(10 50em){
 				padding-top: 0;
 				p{
+					word-break: break-word;
 					font-size: 1.3em;
 				}
 			}
