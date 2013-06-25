@@ -25,9 +25,10 @@ $(function(){
 				videoArr.push(data.data[i]);
 			}
 		}
+
 		if(videoArr.length === 0){
 			retryCount++;
-			if(retryCount < 5){
+			if(retryCount < 5 && data.pagination.next_url !== undefined){
 				doSearch(url);
 			} else {
 				errorStatus('Sorry, no videos there.  Try again!');
